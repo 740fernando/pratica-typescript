@@ -1,14 +1,9 @@
 "use strict";
-let valorAny;
-valorAny = 1;
-valorAny = "ola";
-valorAny = true;
-valorAny = 2;
-let value = 'test';
-value = valorAny;
-let valueString = 'big test';
-valueString = value;
-function somarString(string1, string2) {
-    console.log(string1 + string2);
+function somarValores(input1, input2) {
+    return (typeof input1 === "string" || typeof input2 === 'string')
+        ? input1.toString() + input2.toString()
+        : input1 + input2;
 }
-somarString(value, valueString);
+console.log(somarValores(1, 5));
+console.log(somarValores('ola', ', tudo bem?'));
+console.log(somarValores('Combina tipos String e number: ', 5));
