@@ -1,21 +1,69 @@
-let button = document.getElementById('button');
-let input1 = document.getElementById('input1') as HTMLInputElement;
-let input2 = document.getElementById('input2') as HTMLInputElement;
-
-function adicionarNumeros(numero1: number,numero2: number, devePrintar: boolean, frase: string){
-    let resultado = numero1 + numero2
-    if (devePrintar){
-        console.log(frase + resultado);
-    }
-    return numero1 + numero2;
+const pessoa = {
+    nome : 'Mariana',
+    idade : 28,
+    profissao: 'desenvolvedora'
 }
 
-let devePrintar = true;
-let frase = 'O valor é : ';
-if(button) {
-    button.addEventListener('click', ()=> {
-        if(input1 && input2){
-            console.log(adicionarNumeros(Number(input1.value),Number(input2.value), devePrintar,frase));
-        }
+pessoa.idade= 29;
+
+const andre: {nome: string, idade: number, profissao: string} = {
+    nome: 'Andre',
+    idade: 25,
+    profissao: 'pintor'
+}
+
+const paula: {nome: string, idade: number, profissao: string}={
+    nome: 'Paula',
+    idade: 25,
+    profissao: 'tester'
+}
+
+enum Profissao {
+    Professora,
+    Atriz,
+    Desenvolvedora,
+    JogadorDeFutebol
+}
+
+interface Pessoa {
+    nome: string,
+    idade: number,
+    profissao?: Profissao
+}
+
+interface Estudante extends Pessoa{
+    materias: string[]
+}
+
+const vanessa: Pessoa = {
+    nome: 'Vanessa',
+    idade: 23,
+    profissao: Profissao.Professora
+}
+
+const maria: Pessoa = {
+    nome: 'Maria',
+    idade: 23,
+    profissao: Profissao.Desenvolvedora
+}
+
+const jessica: Estudante = {
+    nome: 'Jessica',
+    idade: 28,
+    profissao: Profissao.Desenvolvedora,
+    materias: ['Matemática discreta', 'programação']
+}
+
+const monica: Estudante = {
+    nome: 'Jessica',
+    idade: 28,
+    materias: ['Matemática discreta', 'programação']
+}
+
+function listar(lista: string[]){   
+    lista.forEach(element =>{
+        console.log('- '.concat(element));
     })
 }
+
+listar(monica.materias);
