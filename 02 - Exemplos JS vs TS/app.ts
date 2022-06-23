@@ -1,16 +1,11 @@
-let valorAny: any;
-valorAny = 1;
-valorAny = "ola";
-valorAny = true;
-valorAny=2;
+type input = number | string;
 
-let value: string = 'test';
-value = valorAny;
-let valueString : string = 'big test';
-valueString = value;
-
-function somarString(string1: string, string2: string){
-    console.log(string1 + string2);
+function somarValores(input1: number | string, input2: number | string) {
+    return (typeof input1 === "string" || typeof input2 === 'string')
+        ? input1.toString() + input2.toString()
+        : input1+input2;
 }
 
-somarString(value, valueString);
+console.log(somarValores(1,5));
+console.log(somarValores('ola', ', tudo bem?'));
+console.log(somarValores('Combina tipos String e number: ',5));
