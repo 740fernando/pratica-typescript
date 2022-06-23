@@ -1,19 +1,17 @@
 "use strict";
-function printaValoresNumericos(numero1, numero2) {
-    console.log(numero1 + numero2);
+let anyEstadeVolta;
+anyEstadeVolta = 3;
+anyEstadeVolta = 'teste';
+anyEstadeVolta = 5;
+let stringTest = 'verificar';
+stringTest = anyEstadeVolta;
+let unknowValor;
+unknowValor = 3;
+unknowValor = 'opa';
+unknowValor = true;
+unknowValor = 'vai sim';
+let stringTest2 = 'agora vai';
+//  Propriedade do tipo unknow, é obrigatório fazer uma validação para garantir que o tipo inferido é o apropriado para ser definido.
+if (typeof unknowValor == 'string') {
+    stringTest2 = unknowValor;
 }
-function somarValoresNumericos(numero1, numero2) {
-    return numero1 + numero2;
-}
-function somarValoresNumericosETratar(numero1, numero2, callback) {
-    let resultado = numero1 + numero2;
-    return callback(resultado);
-}
-function aoQuadrado(numero) {
-    return numero * numero;
-}
-function dividirPorEleMesmo(numero) {
-    return numero / numero;
-}
-console.log(somarValoresNumericosETratar(1, 3, aoQuadrado));
-console.log(somarValoresNumericosETratar(1, 3, dividirPorEleMesmo));
