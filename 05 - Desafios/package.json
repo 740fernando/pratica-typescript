@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "lite-server": "^2.6.1",
+    "live-server": "^1.2.2",
     "tsc-watch": "^5.0.3"
   }
 }
